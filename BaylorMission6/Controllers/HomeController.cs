@@ -13,6 +13,11 @@ namespace BaylorMission6.Controllers
             return View();
         }
 
+        public IActionResult gtkJoel()
+        {
+            return View();
+        }
+
         [HttpGet]
         public IActionResult MovieForm()
         {
@@ -25,10 +30,7 @@ namespace BaylorMission6.Controllers
             return View("confirmation", response);
         }
 
-        public IActionResult gtkJoel()
-        {
-            return View();
-        }
+        
         
     }
 }
