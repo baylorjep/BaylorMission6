@@ -1,7 +1,15 @@
+using BaylorMission6.Models;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<MovieFormContext>(options =>
+{
+    options.UseSqlite(builder.Configuration["ConnectionStrings:movieConnection"]);
+});
 
 var app = builder.Build();
 
