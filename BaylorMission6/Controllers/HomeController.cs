@@ -13,6 +13,15 @@ namespace BaylorMission6.Controllers
             return View();
         }
 
+        public IActionResult MovieForm()
+        {
+            return View();
+        }
+
+        public IActionResult gtkJoel()
+        {
+            return View();
+        }
         
     }
 }
