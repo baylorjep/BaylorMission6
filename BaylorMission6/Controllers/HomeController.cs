@@ -22,7 +22,7 @@ namespace BaylorMission6.Controllers
         [HttpPost]
         public IActionResult MovieForm(Rating response)
         {
-            return View("confirmation");
+            return View("confirmation", response);
         }
 
         public IActionResult gtkJoel()
