@@ -35,6 +35,8 @@ namespace BaylorMission6.Controllers
             _context.Ratings.Add(response); // add record to DB
             _context.SaveChanges(); // save DB
 
+
+
             return View("confirmation", response);
         }
 
