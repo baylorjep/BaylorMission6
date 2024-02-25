@@ -6,7 +6,12 @@ namespace BaylorMission6.Controllers
 {
     public class HomeController : Controller
     {
-
+        private MovieFormContext _context;
+      
+        public HomeController(MovieFormContext tempForm) // constructor
+        {
+            _context = tempForm;
+        }
 
         public IActionResult Index()
         {
@@ -27,6 +32,9 @@ namespace BaylorMission6.Controllers
         [HttpPost]
         public IActionResult MovieForm(Rating response)
         {
+            _context.Ratings.Add(response); // add record to DB
+            _context.SaveChanges(); // save DB
+
             return View("confirmation", response);
         }
 
