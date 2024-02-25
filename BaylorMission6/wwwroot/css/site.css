@@ -1,22 +1,85 @@
+/* Reset default margin and padding */
+body, h1, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set charcoal gray background */
+body {
+    background-color: #333333;
+    color: white;
+    font-family: Arial, sans-serif;
+    position: relative;
+    min-height: 100%;
+}
+
+/* Set font size */
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+/* Style for headings */
+h1 {
+    color: white;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
+/* Style for paragraphs */
+p {
+    color: white;
+    font-size: 1.1rem;
+    line-height: 1.5;
 }
 
-body {
-  margin-bottom: 60px;
+/* Center images */
+img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
 }
+
+/* Style for links */
+a {
+    color: #ffa500;
+    text-decoration: none;
+}
+
+    a:hover {
+        color: #ff6600;
+    }
+
+/* Style for buttons */
+.btn, .btn-link.nav-link, .form-control, .form-check-input {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+    .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+        box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    }
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffa500;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+    .button:hover {
+        background-color: #ff6600;
+    }
