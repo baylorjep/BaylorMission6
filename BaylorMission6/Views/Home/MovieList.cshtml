@@ -1,0 +1,50 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model List<Rating> // lowercase m in model to indicate what kind of model
+<br />
+<div class="container">
+    <h1>Joel Hilton Movie Collection</h1>
+    <p>List of all movies in the collection:</p>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Year</th>
+                <th>Director</th>
+                <th>Rating</th>
+                <th>Edited</th>
+                <th>Lent To</th>
+                <th>Notes</th>
+                <th>Edit</th>
+                <th>Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var rating in Model)
+            {
+                <tr>
+                    <td>@rating.title</td>
+                    <td>@rating.year</td>
+                    <td>@rating.director</td>
+                    <td>@rating.rating</td>
+                    <td>@(rating.edited == true ? "Yes" : "No")</td>
+                    <td>@rating.lentTo</td>
+                    <td>@rating.notes</td>
+                    <td>
+                        <a asp-controller="Home" asp-action="Edit" asp-route-id="@rating.ratingID">Edit</a> |
+                    </td>
+                    <td>
+                        <a asp-controller="Home" asp-action="Delete" asp-route-id="@rating.ratingID">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<br />
+<br />
+<br />

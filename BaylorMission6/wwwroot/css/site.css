@@ -83,3 +83,15 @@ a {
     .button:hover {
         background-color: #ff6600;
     }
+
+.table {
+    color: white; /* Set text color to white for the entire table */
+}
+
+    .table th {
+        color: white; /* Set text color to white for table header cells */
+    }
+
+    .table td {
+        color: white; /* Set text color to white for table data cells */
+    }

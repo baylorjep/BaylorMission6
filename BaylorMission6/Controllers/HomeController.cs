@@ -41,6 +41,36 @@ namespace BaylorMission6.Controllers
         }
 
         
+        public IActionResult MovieList ()
+        {
+            // Linq query
+            var ratings = _context.Ratings
+                .OrderBy(x => x.title).ToList();
+
+            return View(ratings);
+        }
+
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var recordToEdit = _context.Ratings
+                .Single(x => x.ratingID == id);
+
+            return View("MovieForm", recordToEdit);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Rating updatedInfo)
+        {
+            _context.Update(updatedInfo);
+            _context.SaveChanges(true);
+            return RedirectToAction("MovieList");
+        }
+
+        public IActionResult Delete()
+        {
+
+        }
         
     }
 }
