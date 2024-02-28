@@ -26,18 +26,26 @@ namespace BaylorMission6.Controllers
         [HttpGet]
         public IActionResult MovieForm()
         {
-            return View();
+            return View("MovieForm", new Rating());
         }
 
         [HttpPost]
         public IActionResult MovieForm(Rating response)
         {
-            _context.Ratings.Add(response); // add record to DB
-            _context.SaveChanges(); // save DB
+            if (ModelState.IsValid)
+            {
+                _context.Ratings.Add(response); // add record to DB
+                _context.SaveChanges(); // save DB
 
+                return View("confirmation", response);
+            }
+            else //invalid data
+            {
+                return View(response);
+            }
+                
 
-
-            return View("confirmation", response);
+            
         }
 
         
@@ -72,7 +80,7 @@ namespace BaylorMission6.Controllers
             var recordToDelete = _context.Ratings
                 .Single(x => x.ratingID == id);
 
-            return View("MovieForm", recordToDelete);
+            return View(recordToDelete);
         }
         [HttpPost]
         public IActionResult Delete(Rating app)
