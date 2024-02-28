@@ -63,13 +63,24 @@ namespace BaylorMission6.Controllers
         public IActionResult Edit(Rating updatedInfo)
         {
             _context.Update(updatedInfo);
-            _context.SaveChanges(true);
+            _context.SaveChanges();
             return RedirectToAction("MovieList");
         }
-
-        public IActionResult Delete()
+        [HttpGet]
+        public IActionResult Delete(int id)
         {
+            var recordToDelete = _context.Ratings
+                .Single(x => x.ratingID == id);
 
+            return View("MovieForm", recordToDelete);
+        }
+        [HttpPost]
+        public IActionResult Delete(Rating app)
+        {
+            _context.Ratings.Remove(app);
+            _context.SaveChanges();
+
+            return RedirectToAction("MovieList");
         }
         
     }

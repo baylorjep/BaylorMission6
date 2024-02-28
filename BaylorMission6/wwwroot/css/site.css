@@ -9,8 +9,6 @@ body {
     background-color: #333333;
     color: white;
     font-family: Arial, sans-serif;
-    position: relative;
-    min-height: 100%;
 }
 
 /* Set font size */
@@ -84,6 +82,7 @@ a {
         background-color: #ff6600;
     }
 
+/* Style for tables */
 .table {
     color: white; /* Set text color to white for the entire table */
 }
@@ -95,3 +94,15 @@ a {
     .table td {
         color: white; /* Set text color to white for table data cells */
     }
+
+/* Footer styles */
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #333333;
+    color: white;
+    text-align: center;
+    line-height: 60px; /* Center text vertically */
+}
